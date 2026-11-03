@@ -1,0 +1,11 @@
+project: savantenvs/cog
+target: fuzz_openmpt
+
+cmds:
+  - cmd: /mayhem/fuzz_openmpt
+    libfuzzer: true
+    dictionary: /mayhem/Frameworks/OpenMPT/OpenMPT/contrib/fuzzing/all_formats.dict
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_openmpt/testsuite
